@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+/* variable */
+
+:root {
+    --bg-color-menu: hsla(0, 50%, 100%, 0.2);
+    --bg-color-img: hsla(0, 50%, 0%, 0.5);
+    --bg-color-bench-difference: hsl(0, 17%, 17%);
+    --bg-color-form: hsla(0, 50%, 0%, 0.7);
+    --bg-color-text-input: hsl(59, 20%, 53%);
+    --bg-color-contact-us:hsl(235, 85%, 92%);
+    --bg-color-social-network:hsl(9, 40%, 63%);
+    --box-shadow-white-trans: hsl(0, 50%, 100%);
+    --color-text-black: black;
+    --color-text-white: white;
+    --width-general: 100%;
+    --height-general: 100vh;
+    --background-cover: cover;
+    --animation-grid-img: carddiscover 0.5s forwards;
+    --border-box-white: 1px solid white;
+}
+
+/* générale */
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;                    /* Pour les utilisateurs qui ont d'autre paramêtre */
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.grid {
+    display: grid;
+}
+
+.flex{
+    display: flex;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+.centeralign{
+    align-items: center;
+}
+
+.centerjustify{
+    justify-content: center;
+}
+
+.overflow_hidden{
+    overflow: hidden;
+}
+
+.flex_end{
+    justify-content: flex-end;
+}
+
+.push_right{
+    padding-right: 50px;
+}
+
+/* background-generale */
+
+.background_alignement{
+    background-position: center;
+    background-size: var(--background-cover);
+}
+
+.bench_img_difference{
+    background-color: var(--bg-color-bench-difference);
+    background-blend-mode: difference;
+}
+
+.background_size{
+    width: var(--width-general);
+    height: var(--height-general);
+}
+
+/* texte generale */
+
+.centertext{
+    text-align: center;
+}
+
+.white_color{
+    color: var(--color-text-white);
+}
+
+.black_color{
+    color: var(--color-text-black);
+}
+
+/* First-page */
+
+header {
+    background-image: url(../media/img/building.jpeg);
+}
+
+#title_head{
+    width: 45%;
+    height: 40vh;
+    border: var(--border-box-white);
+}
+
+#title_head>h2{
+    font-size: 5.5em;
+    font-weight: bolder;
+}
+
+#title_head>h2>span{
+    font-size: 1.7em;
+}
+
+/* menu-gauche dynamique */
+
+#menu_dynamique {
+    width: 25%;
+    min-width: 400px;
+    height: var(--height-general);
+    background-color: var(--bg-color-menu);
+    backdrop-filter: blur(4px);
+    clip-path: polygon(50% 0%, 75% 50%, 50% 100%, 0 100%, 0 0);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+#menu_dynamique ul {
+    margin: auto 0;
+    width: 200px;
+    list-style: none;
+}
+
+#menu_dynamique ul li {
+    border: var(--border-box-white);
+    text-align: center;
+    margin: 0 0 40px 10px;
+}
+
+#menu_dynamique ul li a {
+    display: block;
+    padding: 15px 0px;
+    text-decoration: none;
+}
+
+#menu_dynamique ul li a:hover {
+    background-color: var(--bg-color-menu);
+    color: var(--color-text-white);
+}
+
+
+/* cities_building */
+
+/* title */
+
+#title_cities-building{
+    bottom: 50px;
+    left: 400px;
+}
+
+#title_cities-building>span{
+    font-size: 5em;
+    font-weight: bolder;
+}
+
+/* container_img_grid */
+
+#cont_cities_building {
+    background-image: url(../media/img/building2.jpg);
+    perspective: 100rem;
+    padding-right: 120px;
+}
+
+#cont_img {
+    grid-template-areas:"living work sydney dubai" 
+                        "living work sydney dubai"
+                        "living building building dubai"
+                        "paris building building new" 
+                        "paris building building new" 
+                        "paris building building new";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    width: 60rem;
+    height: 50vh;
+    row-gap: 2ch;
+    column-gap: 2ch;
+    transform: rotateY(-40deg);
+}
+
+#cont_img>div{
+    border-radius: 20px;
+}
+
+/* animation_card_left&right */
+
+.card_img{
+    background-color: var(--bg-color-img);
+    width: var(--width-general);
+    font-size: 2.5em;
+    height: 50vh;
+    opacity: 0;
+}
+
+/* animation_card_top */
+#work>.card_img, #sydney>.card_img{
+    height: 30vh;
+}
+
+/* animation_card_big-bottom */
+#building>.card_img{
+    height: 65vh;
+}
+
+/* animation img hover */
+
+#cont_img>div:hover{
+    transition: all .5s;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px 3px var(--box-shadow-white-trans);
+}
+
+/* Living_case */
+
+#living {
+    background-image: url(../media/img/building9.jpg);
+    grid-area: living;
+}
+
+#living:hover>.card_img{
+    animation: var(--animation-grid-img);
+}
+
+/* paris_case */
+
+#paris {
+    background-image: url(../media/img/building7.jpg);
+    grid-area: paris;
+}
+
+#paris:hover>.card_img{
+    animation: var(--animation-grid-img);
+}
+
+/* work_case */
+
+#work {
+    background-image: url(../media/img/building10.jpg);
+    grid-area: work;
+}
+
+#work:hover>.card_img{
+    animation: var(--animation-grid-img);
+}
+
+/* building_case */
+
+#building {
+    background-image: url(../media/img/building5.jpg);
+    grid-area: building;
+}
+
+#building:hover>.card_img{
+    animation: var(--animation-grid-img);
+}
+
+/* sydney_case */
+
+#sydney {
+    background-image: url(../media/img/building6.jpg);
+    grid-area: sydney;
+}
+
+#sydney:hover>.card_img{
+    animation: var(--animation-grid-img);
+}
+
+/* dubai_case */
+
+#dubai {
+    background-image: url(../media/img/building8.jpg);
+    grid-area: dubai;
+}
+
+#dubai:hover>.card_img{
+    animation: var(--animation-grid-img);
+}
+
+/* new-york_case */
+
+#new-york {
+    background-image: url(../media/img/building11.jpg);
+    grid-area: new;
+}
+
+#new-york:hover>.card_img{
+    animation: var(--animation-grid-img);
+}
+
+/* keyframes_card_cities-building */
+
+@keyframes carddiscover{
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-25%);
+    }
+}
+
+/* Contact us  */
+
+#cont_contact_us{
+    background-image: url(../media/img/building3.jpg);
+    background-color:  var(--bg-color-contact-us);
+    background-blend-mode: multiply;
+}
+
+/* fieldset & legend */
+
+#contact_us{
+    width: 45%;
+    height: 80vh;
+    border: none;
+    padding-top: 200px;
+}
+
+legend{
+    top: 50px;
+    right: 20px;
+    font-size: 2.5em;
+    font-weight: bolder;
+}
+
+/* Formulaire */
+
+#form_contact{
+    height: 100%;
+    width: 100%;
+    grid-template:"name firstname"
+                  "email email"
+                  "textarea textarea";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 2ch;
+}
+
+form div:nth-of-type(1){
+    grid-area: name;
+}
+
+form div:nth-of-type(2){
+    grid-area: firstname;
+}
+
+form div:nth-of-type(3){
+    grid-area: email;
+}
+
+form div:nth-of-type(4){
+    grid-area: textarea;
+}
+
+.form_aspect_general{
+    background-color: var(--bg-color-form);
+    font-size: 2em;
+    width: var(--width-general);
+    padding: 15px;
+}
+
+input, textarea{
+    border: none;
+    border-bottom: 1px solid var(--color-text-white);
+    margin-top: 10px;
+}
+
+input::selection, textarea::selection{
+    background-color: var(--bg-color-text-input);
+}
+
+input:focus, textarea:focus{
+    border-radius: 5px;
+    outline: 2px solid var(--bg-color-text-input);
+}
+
+::placeholder{
+    color: var(--color-text-white);
+}
+
+div>label{
+    font-size: 1.5em;
+}
+
+/* footer */
+
+#cont_social_network{
+    background-image: url(../media/img/building4.jpg);
+    background-color: var(--bg-color-social-network);
+    background-blend-mode: screen;
+}
+
+#social_network{
+    width: 50%;
+    height: 60vh;
+}
+
+.lien_alignement{
+    width: 120px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+footer nav>ul{
+    align-items: flex-end;
+}
+
+footer ul{
+    list-style: none;
+    margin-top: 100px;
+}
+
+footer ul>li:nth-child(1){
+    font-size: 1.5em;
+    margin-right: 100px;
+}
+
+/* media queries  */
+
+@media screen and (min-width: 1300px) and (max-width: 1650px) {
+
+    /* cities building  */
+
+    #title_cities-building{
+        left: 310px;
+    }
+
+    #cont_cities_building{
+        padding-right: 80px;
+    }
+
+    #cont_img{
+        width: 50rem;
+    }
+
+    /* social network  */
+
+    .lien_alignement{
+        width: 80px;
+    }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1500px) {
+
+    /* cities building  */
+    
+    #title_cities-building>span{
+        font-size: 4em;
+    }
+
+    #cont_cities_building{
+        padding-right: 60px;
+    }
+
+}
+
