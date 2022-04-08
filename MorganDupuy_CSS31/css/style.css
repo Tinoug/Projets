@@ -114,6 +114,7 @@ img {
 
 header {
     background-image: url(../media/img/building.jpeg);
+    background-color: blue;
 }
 
 #title_head{
