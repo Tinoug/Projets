@@ -1,0 +1,834 @@
+@font-face {
+    font-family: 'hades';
+    src: url(../media/font/HADES.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+
+/* propriété générale */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-family: 'hades';
+    font-size: 3em;
+}
+
+header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+
+/* entête */
+
+#headinfo {
+    height: 10vh;
+    width: 100%;
+    z-index: 100;
+}
+
+#logo {
+    width: 20%;
+    min-width: 220px;
+    max-width: 300px;
+    left: 50px;
+    margin-top: 50px;
+    z-index: 100;
+}
+
+
+/* MENU BURGER */
+
+#menuToggle {
+    margin-right: 100px;
+    z-index: 100;
+}
+
+#menuToggle li {
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin-bottom: 5px;
+    background: rgb(223, 14, 19);
+    border-radius: 4px;
+}
+
+#menu {
+    background-color: rgb(209, 149, 37);
+    width: 100%;
+    height: 90vh;
+    padding-top: 10vh;
+    top: 10vh;
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: rgb(103, 28, 23);
+    font-family: 'hades';
+    font-size: 3em;
+}
+
+#menu>ul {
+    list-style: none;
+}
+
+#menu li {
+    margin: 150px auto;
+}
+
+
+/* menu affichage */
+
+#menuToggle:hover+#menu {
+    animation: menuaffi 0.5s forwards;
+}
+
+@keyframes menuaffi {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+
+/* crosshair */
+
+#menuToggle:hover li:first-child {
+    animation: crosshairfirst 0.5s forwards;
+}
+
+#menuToggle:hover li:nth-last-child(2) {
+    animation: crosshairsecond 0.5s forwards;
+}
+
+#menuToggle:hover li:nth-last-child(1) {
+    animation: crosshairthird 0.5s forwards;
+}
+
+@keyframes crosshairfirst {
+    100% {
+        transform: rotate(45deg) translate(0px, -7px);
+        transform-origin: 0% 0%;
+    }
+}
+
+@keyframes crosshairsecond {
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes crosshairthird {
+    100% {
+        transform: rotate(-45deg) translate(0, 5px);
+        transform-origin: 0% 100%;
+    }
+}
+
+
+/* Image menu */
+
+#menuzagreus::after {
+    content: "";
+    background-image: url(../media/img/zagreus.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    right: 250px;
+    bottom: -100px;
+}
+
+#menuzeus::after {
+    content: "";
+    background-image: url(../media/img/Zeus.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    left: 200px;
+    bottom: -100px;
+}
+
+#menuthanatos::after {
+    content: "";
+    background-image: url(../media/img/Thanatos.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    right: 270px;
+    bottom: -100px;
+}
+
+#menumegaera::after {
+    content: "";
+    background-image: url(../media/img/Megaera.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    left: 250px;
+    bottom: -100px;
+}
+
+
+/* classe générale */
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    padding: 15vh 0;
+    width: 100%;
+}
+
+.centeralign {
+    align-items: center;
+}
+
+.centerjusti {
+    justify-content: center;
+}
+
+.centertext {
+    text-align: center;
+}
+
+
+/* classe couleur */
+
+.blackbck {
+    background-color: rgb(21, 11, 9);
+}
+
+.white {
+    color: white;
+}
+
+.brown {
+    color: rgb(122, 102, 75);
+}
+
+
+/* classe titre séparation */
+
+.firsttitle {
+    padding: 10px 0;
+}
+
+
+/* général texte */
+
+.titlesection {
+    margin-bottom: 30px;
+}
+
+.text {
+    font-size: 1.3em;
+    width: 45%;
+    max-width: 700px;
+    min-width: 500px;
+}
+
+.textleft {
+    margin-left: 100px;
+}
+
+.textright {
+    margin-right: 100px;
+    text-align: right;
+}
+
+.flexright {
+    justify-content: flex-end;
+}
+
+
+/* général image */
+
+.imgleft {
+    left: 60px;
+}
+
+.imagebottom {
+    bottom: -4px;
+}
+
+.imgright {
+    right: 60px;
+}
+
+
+/* première partie du main  */
+
+main {
+    padding-top: 10vh;
+}
+
+#headback {
+    background-image: url(../media/img/wall.jpg);
+    background-size: cover;
+    background-position: center 0;
+    width: 100%;
+    height: 90vh;
+}
+
+.container:first-of-type {
+    background-color: rgb(102, 26, 26);
+}
+
+
+/* Zagreus */
+
+#zagreustext {
+    color: rgb(209, 149, 37);
+}
+
+#zagreus {
+    max-width: 520px;
+    min-width: 490px;
+    width: 38%;
+}
+
+
+/* Hadès */
+
+.container:nth-of-type(2) {
+    background-color: rgb(254, 207, 7);
+}
+
+#hadestext {
+    color: rgb(103, 28, 23);
+}
+
+#hades {
+    min-width: 570px;
+    max-width: 620px;
+    width: 42%;
+    margin-bottom: -2px;
+}
+
+
+/* thanatos */
+
+.container:nth-of-type(3) {
+    background-color: rgb(54, 58, 67);
+}
+
+#thanatostext {
+    color: rgb(193, 119, 204);
+}
+
+#thanatos {
+    width: 45%;
+    min-width: 600px;
+    max-width: 700px;
+}
+
+
+/* Megaera */
+
+.container:last-of-type {
+    background-color: rgb(47, 85, 182);
+}
+
+#megaera {
+    width: 42%;
+    max-width: 660px;
+    min-width: 590px;
+}
+
+#megaeraphone {
+    display: none;
+}
+
+
+/* générale footer */
+
+.posindex {
+    z-index: 1;
+}
+
+.posbottom {
+    bottom: 0px;
+}
+
+.large {
+    width: 80%;
+}
+
+
+/* footer */
+
+footer {
+    background-image: url(../media/img/fond2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+#sectfooter {
+    margin: 0 auto;
+    margin-top: 350px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 350px 200px;
+}
+
+.dieuxcont {
+    background-color: blue;
+    width: 300px;
+    height: 70px;
+    border-radius: 25px;
+    font-size: large;
+}
+
+
+/* Athena */
+
+#athena {
+    background-color: rgb(105, 118, 173);
+    color: rgb(251, 250, 168);
+}
+
+#athenaimg {
+    width: 330px;
+    left: -30px;
+}
+
+#athenaimg:hover+#athenadesc {
+    animation: carddiscover 1s forwards;
+}
+
+
+/* Zeus */
+
+#zeus {
+    background-color: rgb(254, 240, 165);
+}
+
+#zeusimg {
+    left: -120px;
+    width: 570px;
+}
+
+#zeusimg:hover+#zeusdesc {
+    animation: carddiscover 1s forwards;
+}
+
+
+/* Arthemis */
+
+#artemis {
+    background-color: rgb(80, 126, 61);
+}
+
+#artemisimg {
+    width: 450px;
+    left: -70px;
+}
+
+#artemisimg:hover+#artemisdesc {
+    animation: carddiscover 1s forwards;
+}
+
+
+/* Demether */
+
+#demeter {
+    background-color: rgb(170, 210, 210);
+}
+
+#demeterimg {
+    width: 370px;
+    left: -20px;
+}
+
+#demeterimg:hover+#demeterdesc {
+    animation: carddiscover 1s forwards;
+}
+
+
+/* Poseidon */
+
+#poseidon {
+    background-color: rgb(111, 156, 115);
+}
+
+#poseidonimg {
+    width: 600px;
+    left: -130px;
+}
+
+#poseidonimg:hover+#poseidondesc {
+    animation: carddiscover 1s forwards;
+}
+
+
+/* Ares */
+
+#ares {
+    background-color: red;
+}
+
+#aresimg {
+    width: 450px;
+    left: -90px;
+}
+
+#aresimg:hover+#aresdesc {
+    animation: carddiscover 1s forwards;
+}
+
+
+/* carte description */
+
+.carddieux {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 280px;
+    border-radius: 35px;
+    opacity: 0;
+    z-index: 0;
+}
+
+
+/* animation carte */
+
+@keyframes carddiscover {
+    20% {
+        opacity: 0;
+        transform: translateY(-75%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-125%);
+    }
+}
+
+@media screen and (min-width: 1700px) and (max-width: 2064px) {
+    /* text main */
+    .text {
+        font-size: 1.5em;
+    }
+    .textleft {
+        margin-left: 150px;
+    }
+    .textright {
+        margin-right: 150px;
+    }
+    /* image main */
+    .imgleft {
+        left: 200px;
+    }
+    .imgright {
+        right: 200px;
+    }
+}
+
+@media screen and (min-width:1301px) and (max-width: 1440px) {
+    .dieuxcont>h1 {
+        font-size: 2.4em;
+    }
+    .dieuxcont {
+        width: 230px;
+    }
+    #sectfooter {
+        gap: 320px 120px;
+        margin-top: 250px;
+    }
+    /* image main */
+    .imgleft {
+        left: 20px;
+    }
+    .imgright {
+        right: 20px;
+    }
+    /* text main */
+    .textleft {
+        margin-left: 70px;
+    }
+    .textright {
+        margin-right: 70px;
+    }
+    /* dieuximg card */
+    .carddieux {
+        height: 250px;
+    }
+    #athenaimg {
+        width: 250px;
+    }
+    #zeusimg {
+        width: 450px;
+    }
+    #artemisimg {
+        width: 360px;
+    }
+    #demeterimg {
+        width: 340px;
+        left: -30px;
+    }
+    #poseidonimg {
+        width: 550px;
+        left: -150px;
+    }
+    #aresimg {
+        width: 360px;
+        left: -60px;
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width:1300px) {
+    /* image main */
+    .imgleft {
+        left: 0;
+    }
+    .imgright {
+        right: 0;
+    }
+    /* texte main */
+    .text {
+        font-size: 1.2em;
+        width: 40%;
+        min-width: 425px;
+    }
+    .textleft {
+        margin-left: 20px;
+    }
+    .textright {
+        margin-right: 20px;
+    }
+    /* dieux img card */
+    .carddieux {
+        height: 270px;
+    }
+}
+
+@media screen and (min-width: 335px) and (max-width: 1023px) {
+    #headinfo {
+        background-color: rgb(209, 149, 37);
+        justify-content: flex-end;
+        align-items: center;
+    }
+    #logo {
+        min-width: 100px;
+        margin-top: 20px;
+        left: 30px;
+    }
+    /* menu */
+    #menuToggle {
+        margin-right: 40px;
+    }
+    #menuToggle li {
+        background-color: black;
+        height: 1px;
+        margin-bottom: 13px;
+    }
+    #menuToggle li:last-child {
+        margin-bottom: 0px;
+    }
+    #menu {
+        padding-top: 20px;
+    }
+    #menu li a {
+        font-size: 1.9em;
+    }
+    /* menu image */
+    #menuzagreus::after {
+        bottom: -80px;
+    }
+    #menuzeus::after {
+        bottom: -80px;
+    }
+    #menuthanatos {
+        bottom: -80px;
+    }
+    #menumegaera {
+        bottom: -80px;
+    }
+    /* animation crosshair */
+    @keyframes crosshairfirst {
+        100% {
+            transform: rotate(45deg);
+            transform-origin: 0% 0%;
+        }
+    }
+    @keyframes crosshairthird {
+        100% {
+            transform: rotate(-45deg);
+            transform-origin: 0% 100%;
+        }
+    }
+    /* main */
+    #headback {
+        background-image: url(../media/img/mobileWPHades.jpg);
+    }
+    .container {
+        padding: 0 0;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .container:last-of-type {
+        justify-content: center;
+    }
+    .container,
+    .container>div {
+        position: unset;
+    }
+    /* image */
+    .imgright {
+        right: 0;
+    }
+    .imgleft {
+        left: 0;
+    }
+    #zagreus,
+    #hades,
+    #thanatos {
+        margin: -4px auto;
+        max-width: 100%;
+        min-width: unset;
+        width: 90%;
+    }
+    /* texte */
+    .text {
+        min-width: unset;
+    }
+    .textright {
+        margin-right: unset;
+    }
+    .textleft {
+        margin-left: unset;
+    }
+    .titlesection {
+        margin-bottom: 50px;
+    }
+    .titlesection:nth-last-child(3) {
+        margin-bottom: 5px;
+    }
+    #zagreustext {
+        width: 232px;
+    }
+    #hadestext {
+        width: 190px;
+    }
+    #thanatostext {
+        width: 270px;
+    }
+    #megaeratext {
+        width: auto;
+        height: auto;
+    }
+    #megaeraphone {
+        display: block;
+        margin: 0 auto;
+        max-width: 80%;
+        height: auto;
+        max-height: 60vh;
+    }
+    /* disable */
+    #megaera,
+    footer {
+        display: none;
+    }
+    #zagreustext>p,
+    #hadestext>p,
+    #thanatostext>p,
+    #megaeratext>p:last-child {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1023px) {
+    /* menu image */
+    #menuzagreus::after {
+        width: 250px;
+        height: 250px;
+        right: 110px;
+    }
+    #menuzeus::after {
+        width: 250px;
+        height: 250px;
+        left: 100px;
+    }
+    #menuthanatos::after {
+        width: 250px;
+        height: 250px;
+        right: 150px;
+    }
+    #menumegaera::after {
+        width: 250px;
+        height: 250px;
+        left: 110px;
+    }
+    /* main */
+    #megaeraphone {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 335px) and (max-width: 640px) {
+    /* menu image */
+    #menuzagreus::after {
+        width: 170px;
+        height: 170px;
+        right: 80px;
+    }
+    #menuzeus::after {
+        width: 170px;
+        height: 170px;
+        left: 70px;
+    }
+    #menuthanatos::after {
+        width: 170px;
+        height: 170px;
+        right: 100px;
+    }
+    #menumegaera::after {
+        width: 170px;
+        height: 170px;
+        left: 80px;
+    }
+    /* main */
+    #megaeraphone {
+        font-size: 0.9em;
+    }
+}
